@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Basic Vue Js - HelloWorld App</title>
+
+
+
+  <!-- https://google.github.io/material-design-icons/#icon-font-for-the-web -->
+
+  <!-- Using via Google Web Fonts -->
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+
+
+  <!-- https://tailwindcss.com/docs/installation -->
+
+  <!-- Using Tailwind via CDN -->
+
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+
+
+
+  <!-- https://v3.vuejs.org/guide/installation.html#release-notes -->
+
+  <!-- Vue CDN -->
+  <script src="https://unpkg.com/vue@3.0.0-beta.12/dist/vue.global.js"></script>
+  <script src="https://unpkg.com/vue@next"></script>
+
+<style>
+  img{
+    width: 250px;
+    height: 250px;
+  }
+  img.heart{
+    width: 25px;
+    height: 25px;
+  }
+  </style>
+
+</head>
+
+<body>
+
+  <div id="app" class="">
+    <h2 class="text-center">Photo Gallery ({{ countUnLove }})</h2>
+    <ul v-for="(item,index) in items "class="justify-self-stretch text-center m-4">
+      <li class="inline p-10 py-28" v-on:click="toogleLove(index)">
+      <img v-bind:src="item.img" class="inline">
+      <p class="inline" v-html="item.message"  class="space-x-4">
+        {{ item.message}}                 
+      </p>
+      <img class="heart inline" src="./images/heart.png" v-show="item.Love">
+    </li>  
+
+      
+    </ul>
+  </div>
+ 
+
+
+
+  <!-- my main.js -->
+
+  <script src="./main.js"></script>
+
+</body>
+
+</html>
